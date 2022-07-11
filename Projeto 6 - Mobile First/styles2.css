@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #eff1ff;
+  --text: #23053a;
+  --header-title: #fff;
+  --header-title-background: #cbc0d3;
+  --header-background: #8e9aaf;
+  --product-tag-background: #feeafa;
+}
+
+@keyframes article-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  25% {
+    opacity: 0.25;
+    transform: translateY(15%);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(10%);
+  }
+
+  75% {
+    opacity: 0.75;
+    transform: translateY(5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes article-tag-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  25% {
+    opacity: 0.25;
+    transform: translateY(-75%);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(-50%);
+  }
+
+  75% {
+    opacity: 0.75;
+    transform: translateY(-25%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  background-color: var(--background);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--header-background);
+}
+
+.header img {
+  margin: 3.2rem;
+  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+}
+
+.title-wrapper {
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  color: var(--header-title);
+  background-color: var(--header-title-background);
+}
+
+.title-wrapper h1 {
+  font-size: 4rem;
+  font-family: "Staatliches";
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+}
+
+.container {
+  padding: 1.6rem 3.2rem;
+}
+
+.container p {
+  text-align: center;
+  font-family: "Palanquin";
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 6rem;
+}
+
+.gallery article {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 2rem;
+  animation: article-animation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+.gallery article:nth-child(odd) {
+  height: 250px;
+}
+
+.gallery article:nth-child(even) {
+  height: 450px;
+}
+
+.gallery article + article {
+  margin-top: 3.2rem;
+}
+
+.product-tag {
+  margin: 1.6rem;
+  padding: 0 2.4rem;
+  border-radius: 2rem;
+  background-color: var(--product-tag-background);
+  animation: article-tag-animation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+.product-tag strong {
+  font-size: 2rem;
+  font-family: "Staatliches";
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  line-height: 3.4rem;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+#palettes {
+  background: url("/images/paletas.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#shakes {
+  background: url("/images/shakes.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#pastas {
+  background: url("/images/massas.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+#popsicles {
+  background: url("/images/picoles.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+@media screen and (min-width: 720px) {
+  .header img {
+    width: 250px;
+  }
+
+  .title-wrapper h1 {
+    font-size: 6rem;
+  }
+
+  .container p {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .gallery article {
+    max-width: 640px;
+  }
+
+  .gallery article:nth-child(odd) {
+    height: 500px;
+  }
+
+  .gallery article:nth-child(even) {
+    height: 900px;
+  }
+
+  .product-tag {
+    margin: 2.4rem;
+    padding: 0.5rem 3.6rem;
+  }
+
+  .product-tag strong {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .header img {
+    width: 300px;
+    margin: 4.8rem;
+  }
+
+  .title-wrapper h1 {
+    font-size: 8rem;
+  }
+
+  .container p {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+
+  .gallery article {
+    max-width: 960px;
+  }
+
+  .gallery article:nth-child(odd) {
+    height: 750px;
+  }
+
+  .gallery article:nth-child(even) {
+    height: 1350px;
+  }
+
+  .product-tag {
+    margin: 3.2rem;
+    padding: 1rem 4.8rem;
+  }
+
+  .product-tag strong {
+    font-size: 4rem;
+  }
+}
